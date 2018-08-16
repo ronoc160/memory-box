@@ -7,16 +7,7 @@ var express = require('express'),
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-var config = {
-      "USER"    : "",
-      "PASS"    : "",
-      "HOST"    : "ec2-18-191-52-238.us-east-2.compute.amazonaws.com",
-      "PORT"    : "27017",
-      "DATABASE" : "memoryBox"
-    };
-
-var dbPath  = "mongodb://"+config.USER + ":"+config.PASS + "@"+config.HOST + ":"+config.PORT + "/"+config.DATABASE;
-mongoose.connect(dbPath);
+mongoose.connect('mongodb://127.0.0.1:27017/memoryBox');
 
 app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: true }));
