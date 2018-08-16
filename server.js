@@ -6,8 +6,17 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
-// mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://18.217.114.25/memoryBox');
+mongoose.Promise = global.Promise;
+var config = {
+      "USER"    : "",
+      "PASS"    : "",
+      "HOST"    : "ec2-18-217-114-25.us-east-2.compute.amazonaws.com",
+      "PORT"    : "27017",
+      "DATABASE" : "memoryBox"
+    };
+
+var dbPath  = "mongodb://"+config.USER + ":"+config.PASS + "@"+config.HOST + ":"+config.PORT + "/"+config.DATABASE;
+mongoose.connect(dbPath);
 
 app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: true }));
