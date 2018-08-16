@@ -11,7 +11,7 @@ var config = {
       "USER"    : "",
       "PASS"    : "",
       "HOST"    : "ec2-18-217-114-25.us-east-2.compute.amazonaws.com",
-      "PORT"    : "8080",
+      "PORT"    : "9000",
       "DATABASE" : "memoryBox"
     };
 
