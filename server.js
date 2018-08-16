@@ -6,8 +6,8 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://18.217.114.25/memoryBox');
+// mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://18.217.114.25/memoryBox');
 
 app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: true }));
