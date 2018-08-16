@@ -20,9 +20,9 @@ routes(app); //register the route
 
 app.listen(port);
 
-// app.use(function(req, res) {
-//   // The snippet bellow helps to redirect and respond whenever a wrong route is entered on the site.
-//   res.status(404).send({url: req.originalUrl + ' not found'})
-// });
+app.use(function(req, res) {
+  // The snippet bellow helps to redirect and respond whenever a wrong route is entered on the site.
+  res.status(404).send({url: req.originalUrl + ' not found'})
+});
 
 console.log('todo list RESTful API server started on: ' + port);
