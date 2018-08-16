@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 var config = {
       "USER"    : "",
       "PASS"    : "",
-      "HOST"    : "ec2-18-217-114-25.us-east-2.compute.amazonaws.com",
+      "HOST"    : "ec2-18-191-52-238.us-east-2.compute.amazonaws.com",
       "PORT"    : "27017",
       "DATABASE" : "memoryBox"
     };
