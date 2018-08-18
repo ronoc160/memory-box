@@ -7,7 +7,7 @@ var express = require('express'),
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/test', { useNewUrlParser: true });
+mongoose.connect('mongodb://ronoc4444:Homerscb4!@ds125402.mlab.com:25402/memorybox', { useNewUrlParser: true });
 
 app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: true }));
