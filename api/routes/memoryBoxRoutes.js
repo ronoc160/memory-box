@@ -26,12 +26,12 @@ module.exports = function(app) {
     fileFilter: fileFilter
   });
   // todoList Routes
-  app.route('/')
+  app.route('/collections')
     .get(memoryBox.list_all_collections)
     .post(upload.single('productImage'), memoryBox.create_a_collections);
 
 
-  app.route('/:collectionId')
+  app.route('/collections/:collectionId')
     .get(memoryBox.read_a_collections)
     .put(memoryBox.update_a_collections)
     .delete(memoryBox.delete_a_collections);
