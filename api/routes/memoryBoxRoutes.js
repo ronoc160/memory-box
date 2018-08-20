@@ -25,14 +25,20 @@ module.exports = function(app) {
     },
     fileFilter: fileFilter
   });
-  // todoList Routes
-  app.route('/collections')
-    .get(memoryBox.list_all_collections)
-    .post(upload.single('productImage'), memoryBox.create_a_collections);
+
+    app.post('/collections',upload.single('productImage'), memoryBox.create_a_collections);
 
 
-  app.route('/collections/:collectionId')
-    .get(memoryBox.read_a_collections)
-    .put(memoryBox.update_a_collections)
-    .delete(memoryBox.delete_a_collections);
+    // Retrieve all Notes
+    app.get('/collections', memoryBox.read_a_collections);
+
+    // Retrieve a single Note with noteId
+    app.get('/collections/:collectionId', memoryBox.findOne);
+
+    // Update a Note with noteId
+    app.put('/collections/:collectionId', memoryBox.update_a_collections);
+
+    // Delete a Note with noteId
+    app.delete('/collections/:collectionId', memoryBox.delete_a_collections)
+
 };
